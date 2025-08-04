@@ -6,12 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2328409A891FB8FCB289966B /* Pods_PokemonApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D613B4C960A5FDC15E03158F /* Pods_PokemonApps.framework */; };
+		7D31F2072E408F89007D4155 /* AuthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D31F1F72E408F89007D4155 /* AuthPageViewController.swift */; };
+		7D31F2092E408F89007D4155 /* AuthPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D31F1F82E408F89007D4155 /* AuthPageViewController.xib */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0C3770030DBFF11083E66B25 /* Pods-PokemonApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApps.debug.xcconfig"; path = "Target Support Files/Pods-PokemonApps/Pods-PokemonApps.debug.xcconfig"; sourceTree = "<group>"; };
 		7D31F1B12E4089C5007D4155 /* PokemonApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D31F1F72E408F89007D4155 /* AuthPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageViewController.swift; sourceTree = "<group>"; };
+		7D31F1F82E408F89007D4155 /* AuthPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthPageViewController.xib; sourceTree = "<group>"; };
+		D613B4C960A5FDC15E03158F /* Pods_PokemonApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C7D2044C9F955E87031EDA /* Pods-PokemonApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApps.release.xcconfig"; path = "Target Support Files/Pods-PokemonApps/Pods-PokemonApps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7D31F1C32E4089CA007D4155 /* Exceptions for "PokemonApps" folder in "PokemonApps" target */ = {
+		7D31F20C2E408F89007D4155 /* Exceptions for "PokemonApps" folder in "PokemonApps" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,10 +32,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7D31F1B32E4089C5007D4155 /* PokemonApps */ = {
+		7D31F2032E408F89007D4155 /* PokemonApps */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				7D31F1C32E4089CA007D4155 /* Exceptions for "PokemonApps" folder in "PokemonApps" target */,
+				7D31F20C2E408F89007D4155 /* Exceptions for "PokemonApps" folder in "PokemonApps" target */,
 			);
 			path = PokemonApps;
 			sourceTree = "<group>";
@@ -36,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2328409A891FB8FCB289966B /* Pods_PokemonApps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		576BEA257C8F26AA8A8EE17A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D613B4C960A5FDC15E03158F /* Pods_PokemonApps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D31F1A82E4089C5007D4155 = {
 			isa = PBXGroup;
 			children = (
-				7D31F1B32E4089C5007D4155 /* PokemonApps */,
+				7D31F20E2E408FA2007D4155 /* AuthPage */,
+				7D31F2032E408F89007D4155 /* PokemonApps */,
 				7D31F1B22E4089C5007D4155 /* Products */,
+				9A1C91725BD7F0D52A1AD203 /* Pods */,
+				576BEA257C8F26AA8A8EE17A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +81,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7D31F20E2E408FA2007D4155 /* AuthPage */ = {
+			isa = PBXGroup;
+			children = (
+				7D31F1F72E408F89007D4155 /* AuthPageViewController.swift */,
+				7D31F1F82E408F89007D4155 /* AuthPageViewController.xib */,
+			);
+			path = AuthPage;
+			sourceTree = "<group>";
+		};
+		9A1C91725BD7F0D52A1AD203 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C3770030DBFF11083E66B25 /* Pods-PokemonApps.debug.xcconfig */,
+				E3C7D2044C9F955E87031EDA /* Pods-PokemonApps.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,20 +106,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D31F1C42E4089CA007D4155 /* Build configuration list for PBXNativeTarget "PokemonApps" */;
 			buildPhases = (
+				C8B3A827C9A991B8E074E5FA /* [CP] Check Pods Manifest.lock */,
 				7D31F1AD2E4089C5007D4155 /* Sources */,
 				7D31F1AE2E4089C5007D4155 /* Frameworks */,
 				7D31F1AF2E4089C5007D4155 /* Resources */,
+				023DB0D01093CDF96767235F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7D31F1B32E4089C5007D4155 /* PokemonApps */,
+				7D31F2032E408F89007D4155 /* PokemonApps */,
 			);
 			name = PokemonApps;
-			packageProductDependencies = (
-			);
 			productName = PokemonApps;
 			productReference = 7D31F1B12E4089C5007D4155 /* PokemonApps.app */;
 			productType = "com.apple.product-type.application";
@@ -122,16 +163,60 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D31F2092E408F89007D4155 /* AuthPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		023DB0D01093CDF96767235F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApps/Pods-PokemonApps-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonApps/Pods-PokemonApps-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonApps/Pods-PokemonApps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B3A827C9A991B8E074E5FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokemonApps-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D31F1AD2E4089C5007D4155 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D31F2072E408F89007D4155 /* AuthPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,12 +225,15 @@
 /* Begin XCBuildConfiguration section */
 		7D31F1C52E4089CA007D4155 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C3770030DBFF11083E66B25 /* Pods-PokemonApps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D3AB7Z9945;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokemonApps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -153,6 +241,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -168,12 +257,15 @@
 		};
 		7D31F1C62E4089CA007D4155 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C7D2044C9F955E87031EDA /* Pods-PokemonApps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D3AB7Z9945;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PokemonApps/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -181,6 +273,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
