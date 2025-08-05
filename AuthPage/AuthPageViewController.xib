@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthPageViewController" customModule="PokemonApps" customModuleProvider="target">
             <connections>
+                <outlet property="btnLogin" destination="QGW-ZA-nu2" id="T3W-zy-Af5"/>
                 <outlet property="btnRegister" destination="Jhe-oA-Wal" id="6GC-0h-e9I"/>
                 <outlet property="imgEye" destination="zby-G7-wVD" id="hd2-9B-S56"/>
                 <outlet property="textfieldPassword" destination="5I0-tk-kMP" id="HiL-N0-PR3"/>
@@ -89,9 +90,13 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="uMv-JU-N24"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Login"/>
+                            <connections>
+                                <action selector="loginPressed:" destination="-1" eventType="touchUpInside" id="MbA-Rp-dTn"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -107,6 +112,9 @@
                     <rect key="frame" x="153" y="284" width="87" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Register"/>
+                    <connections>
+                        <action selector="registerPressed:" destination="-1" eventType="touchUpInside" id="bBY-Y5-AQk"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
