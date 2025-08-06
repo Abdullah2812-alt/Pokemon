@@ -8,23 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2328409A891FB8FCB289966B /* Pods_PokemonApps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D613B4C960A5FDC15E03158F /* Pods_PokemonApps.framework */; };
-		7D2E82BD2E41E1130096070B /* RegisterVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E82BB2E41E1130096070B /* RegisterVc.swift */; };
-		7D2E82BE2E41E1130096070B /* RegisterVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E82BC2E41E1130096070B /* RegisterVc.xib */; };
-		7D2E82C12E41E3D80096070B /* TabbarVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D2E82C02E41E3D80096070B /* TabbarVc.xib */; };
-		7D2E82C22E41E3D80096070B /* TabbarVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2E82BF2E41E3D80096070B /* TabbarVc.swift */; };
-		7D31F2072E408F89007D4155 /* AuthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D31F1F72E408F89007D4155 /* AuthPageViewController.swift */; };
-		7D31F2092E408F89007D4155 /* AuthPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D31F1F82E408F89007D4155 /* AuthPageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C3770030DBFF11083E66B25 /* Pods-PokemonApps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApps.debug.xcconfig"; path = "Target Support Files/Pods-PokemonApps/Pods-PokemonApps.debug.xcconfig"; sourceTree = "<group>"; };
-		7D2E82BB2E41E1130096070B /* RegisterVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVc.swift; sourceTree = "<group>"; };
-		7D2E82BC2E41E1130096070B /* RegisterVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVc.xib; sourceTree = "<group>"; };
-		7D2E82BF2E41E3D80096070B /* TabbarVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVc.swift; sourceTree = "<group>"; };
-		7D2E82C02E41E3D80096070B /* TabbarVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarVc.xib; sourceTree = "<group>"; };
 		7D31F1B12E4089C5007D4155 /* PokemonApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D31F1F72E408F89007D4155 /* AuthPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageViewController.swift; sourceTree = "<group>"; };
-		7D31F1F82E408F89007D4155 /* AuthPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthPageViewController.xib; sourceTree = "<group>"; };
 		D613B4C960A5FDC15E03158F /* Pods_PokemonApps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonApps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C7D2044C9F955E87031EDA /* Pods-PokemonApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonApps.release.xcconfig"; path = "Target Support Files/Pods-PokemonApps/Pods-PokemonApps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,19 +58,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7D2E82BA2E41E0D80096070B /* RegisterViewController */ = {
-			isa = PBXGroup;
-			children = (
-				7D2E82BB2E41E1130096070B /* RegisterVc.swift */,
-				7D2E82BC2E41E1130096070B /* RegisterVc.xib */,
-			);
-			path = RegisterViewController;
-			sourceTree = "<group>";
-		};
 		7D31F1A82E4089C5007D4155 = {
 			isa = PBXGroup;
 			children = (
-				7D31F20E2E408FA2007D4155 /* AuthPage */,
 				7D31F2032E408F89007D4155 /* PokemonApps */,
 				7D31F1B22E4089C5007D4155 /* Products */,
 				9A1C91725BD7F0D52A1AD203 /* Pods */,
@@ -96,18 +74,6 @@
 				7D31F1B12E4089C5007D4155 /* PokemonApps.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7D31F20E2E408FA2007D4155 /* AuthPage */ = {
-			isa = PBXGroup;
-			children = (
-				7D2E82BA2E41E0D80096070B /* RegisterViewController */,
-				7D31F1F72E408F89007D4155 /* AuthPageViewController.swift */,
-				7D31F1F82E408F89007D4155 /* AuthPageViewController.xib */,
-				7D2E82BF2E41E3D80096070B /* TabbarVc.swift */,
-				7D2E82C02E41E3D80096070B /* TabbarVc.xib */,
-			);
-			path = AuthPage;
 			sourceTree = "<group>";
 		};
 		9A1C91725BD7F0D52A1AD203 /* Pods */ = {
@@ -183,9 +149,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D2E82C12E41E3D80096070B /* TabbarVc.xib in Resources */,
-				7D31F2092E408F89007D4155 /* AuthPageViewController.xib in Resources */,
-				7D2E82BE2E41E1130096070B /* RegisterVc.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,9 +201,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D31F2072E408F89007D4155 /* AuthPageViewController.swift in Sources */,
-				7D2E82C22E41E3D80096070B /* TabbarVc.swift in Sources */,
-				7D2E82BD2E41E1130096070B /* RegisterVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

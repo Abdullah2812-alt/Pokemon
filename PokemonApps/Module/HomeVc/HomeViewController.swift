@@ -1,13 +1,13 @@
 //
-//  TabbarVc.swift
+//  HomeViewController.swift
 //  PokemonApps
 //
-//  Created by Kings on 05/08/25.
+//  Created by Kings on 06/08/25.
 //
 
 import UIKit
 
-class TabbarVc: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
