@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterVc" customModule="PokemonApps" customModuleProvider="target">
             <connections>
-                <outlet property="buttonRegister" destination="I75-Vb-Rkf" id="sN0-5q-a1H"/>
+                <outlet property="btnRegister" destination="foz-ha-VmW" id="p7G-hH-Fo6"/>
                 <outlet property="textFieldConfirmPass" destination="vO1-0w-5fV" id="DKf-gP-fYa"/>
                 <outlet property="textFieldPass" destination="RxL-we-Y0b" id="pjC-Ku-PMv"/>
                 <outlet property="textFieldUsername" destination="aXm-th-hWl" id="Es7-kP-QOB"/>
@@ -39,7 +39,7 @@
                                 <constraint firstAttribute="height" constant="56" id="C4A-cz-d9j"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Konfirmasi Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vO1-0w-5fV">
                             <rect key="frame" x="0.0" y="172" width="361" height="56"/>
@@ -47,23 +47,23 @@
                                 <constraint firstAttribute="height" constant="56" id="J4y-As-5rL"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I75-Vb-Rkf">
-                    <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                    <rect key="frame" x="16" y="738" width="361" height="80"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foz-ha-VmW">
-                            <rect key="frame" x="16" y="10" width="361" height="50"/>
+                            <rect key="frame" x="0.0" y="12.666666666666629" width="361" height="55"/>
                             <color key="backgroundColor" red="0.0" green="0.3294117647" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="4f0-kB-UHd"/>
+                                <constraint firstAttribute="height" constant="55" id="4f0-kB-UHd"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Login"/>
+                            <state key="normal" title="Register"/>
                             <connections>
                                 <action selector="RegisterPressed:" destination="-1" eventType="touchUpInside" id="B97-6V-2AF"/>
                             </connections>
@@ -72,10 +72,9 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="foz-ha-VmW" firstAttribute="centerY" secondItem="I75-Vb-Rkf" secondAttribute="centerY" id="4dC-xQ-iuX"/>
-                        <constraint firstAttribute="trailing" secondItem="foz-ha-VmW" secondAttribute="trailing" constant="16" id="Sts-39-8Ri"/>
                         <constraint firstItem="foz-ha-VmW" firstAttribute="centerX" secondItem="I75-Vb-Rkf" secondAttribute="centerX" id="Vzr-cW-DOA"/>
-                        <constraint firstItem="foz-ha-VmW" firstAttribute="leading" secondItem="I75-Vb-Rkf" secondAttribute="leading" constant="16" id="bIC-Gb-FrZ"/>
-                        <constraint firstAttribute="height" constant="70" id="ysc-At-Beb"/>
+                        <constraint firstItem="foz-ha-VmW" firstAttribute="leading" secondItem="I75-Vb-Rkf" secondAttribute="leading" id="bIC-Gb-FrZ"/>
+                        <constraint firstAttribute="height" constant="80" id="ysc-At-Beb"/>
                     </constraints>
                 </view>
             </subviews>
@@ -84,10 +83,10 @@
             <constraints>
                 <constraint firstItem="ZhX-dZ-fNk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="C0X-Pi-OWx"/>
                 <constraint firstItem="ZhX-dZ-fNk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Ehw-df-PTz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I75-Vb-Rkf" secondAttribute="trailing" id="RP9-mN-ui1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I75-Vb-Rkf" secondAttribute="trailing" constant="16" id="RP9-mN-ui1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="I75-Vb-Rkf" secondAttribute="bottom" id="k6t-aw-oTq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZhX-dZ-fNk" secondAttribute="trailing" constant="16" id="lsL-ST-gj4"/>
-                <constraint firstItem="I75-Vb-Rkf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rIk-aB-Xdm"/>
+                <constraint firstItem="I75-Vb-Rkf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="rIk-aB-Xdm"/>
             </constraints>
             <point key="canvasLocation" x="114" y="20"/>
         </view>

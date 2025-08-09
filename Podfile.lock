@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.10.2)
   - Kingfisher (7.12.0)
+  - MBProgressHUD (1.2.0)
   - Realm (20.0.3):
     - Realm/Headers (= 20.0.3)
   - Realm/Headers (20.0.3)
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
+  - MBProgressHUD (~> 1.2.0)
   - Realm
   - RealmSwift
   - RxCocoa
@@ -27,6 +29,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - MBProgressHUD
     - Realm
     - RealmSwift
     - RxCocoa
@@ -37,6 +40,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Realm: 853e5089d6042dff807bda000277eadfe2da93d2
   RealmSwift: f33c19577cefcbf681345d721fcbc7b42be4c949
   RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
   XLPagerTabStrip: 27f3bfe23c53b4251c6481b06b1c289458a3fc1d
 
-PODFILE CHECKSUM: 16cea3880c97991840f36e8bafb90d5e67d38484
+PODFILE CHECKSUM: 5fed5e6aa166ee833b226799be31256d64a9cce2
 
 COCOAPODS: 1.16.2

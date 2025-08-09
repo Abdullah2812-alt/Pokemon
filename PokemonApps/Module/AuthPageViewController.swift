@@ -22,23 +22,15 @@ class AuthPageViewController: UIViewController {
     }
     
     func viewsetup(){
-        textfieldUsername.layer.cornerRadius = 10
-        textfieldUsername.layer.borderWidth = 1.5
-        textfieldUsername.layer.borderColor = UIColor.lightGray.cgColor
-        textfieldPassword.layer.cornerRadius = 10
-        textfieldPassword.layer.borderWidth = 1.5
-        textfieldPassword.layer.borderColor = UIColor.lightGray.cgColor
+        textfieldUsername.layer.cornerRadius = 12
+        textfieldPassword.layer.cornerRadius = 12
         btnLogin.layer.cornerRadius = 14
         
-        // Tambahkan gesture recognizer untuk menyembunyikan/menampilkan password
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(togglePasswordVisibility))
         imgEye.isUserInteractionEnabled = true
         imgEye.addGestureRecognizer(tapGestureRecognizer)
-//        textfieldPassword.isSecureTextEntry = true
     }
     
-    
-    // Fungsi untuk menyembunyikan/menampilkan password
     @objc func togglePasswordVisibility() {
         textfieldPassword.isSecureTextEntry.toggle()
         if textfieldPassword.isSecureTextEntry {
@@ -55,33 +47,24 @@ class AuthPageViewController: UIViewController {
             return
         }
         
-        // Ambil data pengguna dari UserDefaults
         let users = UserDefaults.standard.dictionary(forKey: "RegisteredUsers") as? [String: String] ?? [:]
         
-        // Cek apakah username terdaftar dan password cocok
         if users[username] == password {
-            // Login berhasil
-            // Simpan status login
             UserDefaults.standard.set(true, forKey: "isLoggedIn")
             UserDefaults.standard.set(username, forKey: "loggedInUser")
-            
-            // Navigasi ke halaman utama (TabbarVc)
-            let vc = TabbarVc()
-            self.navigationController?.pushViewController(vc, animated: true)
+            let mainTabBar = DIContainer.shared.makeMainTabBarController()
+            self.navigationController?.pushViewController(mainTabBar, animated: true)
         } else {
-            // Login gagal
             showAlert(title: "Error", message: "Username atau password salah.")
         }
     }
     
     @IBAction func registerPressed(_ sender: Any) {
-        // Navigasi ke halaman registrasi
         let vc = RegisterVc()
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
-    // Fungsi untuk menampilkan alert
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

@@ -8,22 +8,31 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var lblInitial: UILabel!
+    @IBOutlet weak var bgInitial: UIView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUserData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewsetup()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func viewsetup(){
+        bgInitial.layer.cornerRadius = bgInitial.frame.width / 2
     }
-    */
-
+    
+    func loadUserData() {
+        if let username = UserDefaults.standard.string(forKey: "loggedInUser") {
+            lblUsername.text = username
+            if let firstChar = username.first {
+                lblInitial.text = String(firstChar).uppercased()
+            }
+        }
+    }
 }

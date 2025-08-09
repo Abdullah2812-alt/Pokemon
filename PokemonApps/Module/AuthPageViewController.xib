@@ -41,26 +41,26 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-dr-AQc">
-                    <rect key="frame" x="16" y="159" width="361" height="95"/>
+                    <rect key="frame" x="16" y="159" width="361" height="115"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiA-zf-GfD">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RiA-zf-GfD" userLabel="Username">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="LNJ-b5-VCc"/>
+                                <constraint firstAttribute="height" constant="50" id="LNJ-b5-VCc"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzQ-3w-MHy">
-                            <rect key="frame" x="0.0" y="55" width="361" height="40"/>
+                            <rect key="frame" x="0.0" y="65" width="361" height="50"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5I0-tk-kMP">
-                                    <rect key="frame" x="0.0" y="0.0" width="321" height="40"/>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5I0-tk-kMP">
+                                    <rect key="frame" x="0.0" y="0.0" width="321" height="50"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 </textField>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zby-G7-wVD">
-                                    <rect key="frame" x="336" y="11.999999999999998" width="20" height="16"/>
+                                    <rect key="frame" x="336" y="17" width="20" height="16"/>
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="VQq-Dt-oyh"/>
@@ -72,7 +72,7 @@
                             <constraints>
                                 <constraint firstItem="5I0-tk-kMP" firstAttribute="leading" secondItem="tzQ-3w-MHy" secondAttribute="leading" id="0TE-QS-G78"/>
                                 <constraint firstItem="zby-G7-wVD" firstAttribute="centerY" secondItem="tzQ-3w-MHy" secondAttribute="centerY" id="9VG-MT-75H"/>
-                                <constraint firstAttribute="height" constant="40" id="Cse-BS-SZa"/>
+                                <constraint firstAttribute="height" constant="50" id="Cse-BS-SZa"/>
                                 <constraint firstAttribute="trailing" secondItem="zby-G7-wVD" secondAttribute="trailing" constant="5" id="Wyp-ds-C6m"/>
                                 <constraint firstAttribute="trailing" secondItem="5I0-tk-kMP" secondAttribute="trailing" constant="40" id="jFn-G3-u13"/>
                                 <constraint firstAttribute="bottom" secondItem="5I0-tk-kMP" secondAttribute="bottom" id="jx6-hD-VWb"/>
@@ -85,10 +85,10 @@
                     <rect key="frame" x="16" y="748" width="361" height="70"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGW-ZA-nu2">
-                            <rect key="frame" x="16" y="10" width="329" height="50"/>
+                            <rect key="frame" x="0.0" y="5" width="361" height="60"/>
                             <color key="backgroundColor" red="0.0" green="0.3294117647" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="uMv-JU-N24"/>
+                                <constraint firstAttribute="height" constant="60" id="uMv-JU-N24"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -101,15 +101,15 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="QGW-ZA-nu2" secondAttribute="trailing" constant="16" id="8hr-x0-xTQ"/>
+                        <constraint firstAttribute="trailing" secondItem="QGW-ZA-nu2" secondAttribute="trailing" id="8hr-x0-xTQ"/>
                         <constraint firstItem="QGW-ZA-nu2" firstAttribute="centerX" secondItem="zXs-Ok-jm4" secondAttribute="centerX" id="S0B-ml-rvP"/>
                         <constraint firstItem="QGW-ZA-nu2" firstAttribute="centerY" secondItem="zXs-Ok-jm4" secondAttribute="centerY" id="ckH-aS-35z"/>
                         <constraint firstAttribute="height" constant="70" id="r0q-jZ-vxU"/>
-                        <constraint firstItem="QGW-ZA-nu2" firstAttribute="leading" secondItem="zXs-Ok-jm4" secondAttribute="leading" constant="16" id="yrC-A6-6GK"/>
+                        <constraint firstItem="QGW-ZA-nu2" firstAttribute="leading" secondItem="zXs-Ok-jm4" secondAttribute="leading" id="yrC-A6-6GK"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhe-oA-Wal">
-                    <rect key="frame" x="153" y="284" width="87" height="34.333333333333314"/>
+                    <rect key="frame" x="153" y="304" width="87" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Register"/>
                     <connections>
