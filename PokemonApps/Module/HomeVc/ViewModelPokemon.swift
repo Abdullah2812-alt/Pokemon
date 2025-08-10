@@ -23,17 +23,12 @@ class ViewModelPokemon {
     init(getLocalPokemonUseCase: GetLocalPokemonUseCase, syncRemotePokemonUseCase: SyncRemotePokemonUseCase) {
         self.getLocalPokemonUseCase = getLocalPokemonUseCase
         self.syncRemotePokemonUseCase = syncRemotePokemonUseCase
-        
-        self.pokemons
-            .subscribe(onNext: { [weak self] pokemonList in
-                self?.allPokemonFromLocal = pokemonList
-            })
-            .disposed(by: disposeBag)
     }
-    
+
     func fetchData() {
         getLocalPokemonUseCase.execute()
             .subscribe(onNext: { [weak self] localPokemons in
+                self?.allPokemonFromLocal = localPokemons
                 self?.pokemons.accept(localPokemons)
                 if localPokemons.isEmpty {
                     self?.syncData()
@@ -51,6 +46,8 @@ class ViewModelPokemon {
             .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] freshPokemons in
+                    self?.pokemons.accept(freshPokemons)
+                    self?.allPokemonFromLocal = freshPokemons
                     self?.pokemons.accept(freshPokemons)
                 },
                 onError: { [weak self] error in
