@@ -37,4 +37,29 @@ class LocalDataSource {
             realm.add(pokemonObjects)
         }
     }
+    
+    func getDetail(for pokemonId: Int) -> Observable<PokemonDetail?> {
+        if let object = realm.object(ofType: PokemonDetailObject.self, forPrimaryKey: pokemonId) {
+            let detail = PokemonDetail(
+                id: object.id,
+                name: object.name,
+                imageURL: object.imageURL,
+                abilities: Array(object.abilities)
+            )
+            return Observable.just(detail)
+        }
+        return Observable.just(nil)
+    }
+    
+    func saveDetail(from detail: PokemonDetail) {
+        let object = PokemonDetailObject()
+        object.id = detail.id
+        object.name = detail.name
+        object.imageURL = detail.imageURL
+        object.abilities.append(objectsIn: detail.abilities)
+        
+        try! realm.write {
+            realm.add(object, update: .modified)
+        }
+    }
 }

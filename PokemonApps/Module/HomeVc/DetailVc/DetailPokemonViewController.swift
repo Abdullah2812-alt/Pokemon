@@ -7,11 +7,15 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 class DetailPokemonViewController: UIViewController {
     
     var pokemonURL: String?
-    private var viewModel = ViewModelDetail()
+    var viewModel: ViewModelDetail!
+    var pokemon: Pokemon?
+    private let disposeBag = DisposeBag()
     
     private let pokemonImageView = UIImageView()
     private let nameLabel = UILabel()
@@ -21,11 +25,9 @@ class DetailPokemonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupViewModelBinding()
-        
-        if let url = pokemonURL {
-            showHUD(progressLabel: "Loading Details...")
-            viewModel.requestData(for: url)
+        setupBindings()
+        if let pokemon = pokemon {
+            viewModel.fetchData(for: pokemon)
         }
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"),
                                          style: .plain,
@@ -34,55 +36,57 @@ class DetailPokemonViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = backButton
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    @objc private func customBackAction() {
-        navigationController?.popViewController(animated: true)
-    }
     
-    private func setupViewModelBinding() {
-        viewModel.onDataUpdate = { [weak self] in
-            self?.dismissHUD(isAnimated: true)
-            DispatchQueue.main.async {
-                self?.updateUI()
-            }
-        }
+    private func setupBindings() {
+        viewModel.isLoading
+            .asDriver()
+            .drive(onNext: { [weak self] isLoading in
+                if isLoading {
+                    self?.showHUD(progressLabel: "Loading...")
+                } else {
+                    self?.dismissHUD(isAnimated: true)
+                }
+            })
+            .disposed(by: disposeBag)
         
-        viewModel.onError = { [weak self] error in
-            self?.dismissHUD(isAnimated: true)
-            print("Error fetching detail: \(error.localizedDescription)")
-        }
+        viewModel.pokemonDetail
+            .compactMap { $0 }
+            .asDriver(onErrorJustReturn: nil)
+            .drive(onNext: { [weak self] detail in
+                guard let detail = detail else { return }
+                self?.updateUI(with: detail)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
         pokemonImageView.contentMode = .scaleAspectFit
-        self.title = viewModel.pokemonName
+        //        self.title = viewModel.pokemonName
         
         nameLabel.font = .systemFont(ofSize: 32, weight: .bold)
         nameLabel.textAlignment = .center
-        
         abilitiesLabel.text = "Abilities"
         abilitiesLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         abilitiesLabel.textColor = .systemGray
         abilitiesLabel.textAlignment = .center
-        
         abilitiesStackView.axis = .vertical
         abilitiesStackView.spacing = 8
         abilitiesStackView.alignment = .center
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(customBackAction))
+        self.navigationItem.leftBarButtonItem = backButton
         
         let mainStack = UIStackView(arrangedSubviews: [pokemonImageView, nameLabel, abilitiesLabel, abilitiesStackView])
         mainStack.axis = .vertical
         mainStack.spacing = 16
         mainStack.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(mainStack)
-
         NSLayoutConstraint.activate([
             mainStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -91,17 +95,20 @@ class DetailPokemonViewController: UIViewController {
         ])
     }
     
-    private func updateUI() {
-        self.title = viewModel.pokemonName
-        nameLabel.text = viewModel.pokemonName
-        
-        if let urlString = viewModel.imageURL, let url = URL(string: urlString) {
-            pokemonImageView.kf.setImage(with: url)
+    @objc private func customBackAction() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func updateUI(with detail: PokemonDetail) {
+        self.title = detail.name
+        self.nameLabel.text = detail.name
+        if let urlString = detail.imageURL, let url = URL(string: urlString) {
+            self.pokemonImageView.kf.setImage(with: url)
         }
-        abilitiesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        for abilityText in viewModel.pokemonAbilities {
+        self.abilitiesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        for abilityText in detail.abilities {
             let tagView = createAbilityTag(from: abilityText)
-            abilitiesStackView.addArrangedSubview(tagView)
+            self.abilitiesStackView.addArrangedSubview(tagView)
         }
     }
     

@@ -10,6 +10,13 @@ import Foundation
 class DIContainer {
     static let shared = DIContainer()
     
+    private lazy var pokemonRepository: PokemonRepositoryProtocol = {
+        return PokemonRepository(
+            localDataSource: makeLocalDataSource(),
+            remoteDataSource: makeRemoteDataSource()
+        )
+    }()
+    
     private func makeLocalDataSource() -> LocalDataSource {
         return LocalDataSource()
     }
@@ -55,5 +62,13 @@ class DIContainer {
         let tabBarController = TabbarVc(homeViewController: homeVC, profileViewController: profileVC)
         
         return tabBarController
+    }
+    
+    private func makeGetPokemonDetailUseCase() -> GetPokemonDetailUseCase {
+        return GetPokemonDetailUseCase(repository: pokemonRepository)
+    }
+    
+    func makeDetailViewModel() -> ViewModelDetail {
+        return ViewModelDetail(getPokemonDetailUseCase: makeGetPokemonDetailUseCase())
     }
 }

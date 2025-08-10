@@ -68,10 +68,12 @@ class HomeViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        tableViewPokemon.rx.modelSelected(Pokemon.self)
+        tableViewPokemon.rx.modelSelected(Pokemon.self) 
             .subscribe(onNext: { [weak self] pokemon in
                 let detailVC = DetailPokemonViewController()
-                detailVC.pokemonURL = pokemon.url
+                detailVC.viewModel = DIContainer.shared.makeDetailViewModel()
+                detailVC.pokemon = pokemon
+                
                 self?.navigationController?.pushViewController(detailVC, animated: true)
             })
             .disposed(by: disposeBag)
