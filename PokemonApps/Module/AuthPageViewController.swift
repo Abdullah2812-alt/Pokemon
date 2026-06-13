@@ -17,6 +17,7 @@ class AuthPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ini buatview
         viewsetup()
         // Do any additional setup after loading the view.
     }
